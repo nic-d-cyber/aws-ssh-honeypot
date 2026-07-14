@@ -53,7 +53,7 @@ The initial prototype used a lightweight Bash script wrapping standard Unix netw
 - **Technical Limitation:** This model only records network-level connections. Because it does not complete the cryptographic SSH key exchange, it is structurally unable to capture authentication details or payload credentials.
     
 
-> [!info] **Codebase Reference** The stable implementation of this phase is stored in the file **`honeybot.sh`** within the repository root directory.
+ **Codebase Reference** The stable implementation of this phase is stored in the file **`honeybot.sh`** within the repository root directory.
 
 ### Phase 2: Protocol-Level Emulation (`honeybot.py`)
 
