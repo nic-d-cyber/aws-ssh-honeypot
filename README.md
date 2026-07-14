@@ -1,6 +1,6 @@
 # AWS EC2 SSH Honeypot & Threat Intelligence System
 
-> [!meta] **Document Control**
+>  **Document Control**
 > 
 > - **Author:** Nic D
 >     
