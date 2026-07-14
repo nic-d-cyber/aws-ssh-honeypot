@@ -66,7 +66,7 @@ To capture deep interactive metrics, the system was completely rewritten in Pyth
 
 $$\text{Threshold} \ge 5 \text{ login attempts} \quad \text{within} \quad T_{\text{window}} = 60\text{ s}$$
 
-> [!warning] **Active Containment** Upon triggering a ban, the system automatically spawns a subprocess to append a DROP rule to the Linux firewall: `sudo iptables -A INPUT -s <IP> -j DROP` This dynamically isolates persistent threat actors at the network boundary without taking external aggressive actions.
+>  **Active Containment** Upon triggering a ban, the system automatically spawns a subprocess to append a DROP rule to the Linux firewall: `sudo iptables -A INPUT -s <IP> -j DROP` This dynamically isolates persistent threat actors at the network boundary without taking external aggressive actions.
 
 - **Structured Analytics:** Telemetry is written in structured JSON Lines (`honeybot.jsonl`) to enable fast ingestion by SIEMs or custom analytics engines.
     
@@ -89,7 +89,7 @@ Within minutes of being deployed on the public internet, the honeypot detected a
 
 During the initial analysis, a suspicious connection originated from the IP address `65.81.41.31`.
 
-> [!danger] **The Attribution Mismatch**
+>  **The Attribution Mismatch**
 > 
 > - **Reported PTR Record (rDNS):** `65.81.41.31.ip4.feromedia.eu` $\rightarrow$ Points to a European hosting provider (Feromedia).
 >     
@@ -113,7 +113,7 @@ During the initial analysis, a suspicious connection originated from the IP addr
 
 Upgrading the honeypot to Phase 2 enabled the deep capturing of attacker payloads. A persistent Dutch-hosted threat actor (`91.92.40.36`) launched a rapid dictionary attack on our instance, allowing the mitigation engine to cleanly trigger an automated `iptables` ban.
 
-> [!info] **Sliding-Window Block Event** At the $5^{\text{th}}$ credential injection within a span of $18\text{ seconds}$ (well under our $60\text{s}$ threshold), **HoneyBot** triggered a ban on `91.92.40.36`. No further connection attempts were registered, validating the proactive firewall mitigation logic.
+>  **Sliding-Window Block Event** At the $5^{\text{th}}$ credential injection within a span of $18\text{ seconds}$ (well under our $60\text{s}$ threshold), **HoneyBot** triggered a ban on `91.92.40.36`. No further connection attempts were registered, validating the proactive firewall mitigation logic.
 
 #### Captured Credentials Payload
 
